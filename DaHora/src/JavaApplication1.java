@@ -1,4 +1,7 @@
 import java.io.*;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Scanner;
 
 public class JavaApplication1 {
@@ -13,8 +16,6 @@ public class JavaApplication1 {
 			System.out.println("                  |     2 - Cadastro Empresa       |");
 			System.out.println("                  |     3 - Consulta Funcionário   |");
 			System.out.println("                  |     4 - Consulta Empresa       |");
-			System.out.println("                  |     5 - Fazer Check in         |");
-			System.out.println("                  |     6 - Fazer Check out        |");
 			System.out.println("                  |     0 - Sair                   |");
 			System.out.println("                  =================================\n");
 			System.out.println                    ("Opção -> ");
@@ -32,13 +33,7 @@ public class JavaApplication1 {
 				break;
                        case 4:
 				ConsultaEmpresa ();
-				break;
-                       case 5:
-				FazerCheckIn();
-				break;
-                       case 6:
-				FazerCheckOut();
-				break;        
+				break;                              
 			case 0:
 				break;
 			default:
@@ -123,10 +118,5 @@ public class JavaApplication1 {
    private static void ConsultaEmpresa() {
        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
    }
-   private static void FazerCheckIn() {
-       throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-   }
-   private static void FazerCheckOut() {
-       throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-   }                       
+                      
 }
