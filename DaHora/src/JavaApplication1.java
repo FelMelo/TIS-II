@@ -1,7 +1,4 @@
 import java.io.*;
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.Scanner;
 
 public class JavaApplication1 {
@@ -113,10 +110,11 @@ public class JavaApplication1 {
        }	   
    }
    private static void ConsultaFuncionario() {
-       throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+       
    }
    private static void ConsultaEmpresa() {
-       throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+      
    }
-                      
+
+                   
 }
