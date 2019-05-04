@@ -4,13 +4,17 @@ import java.util.Map;
 public class Empresa {
     private static final Map<String, Empresa> Cadastro = new HashMap<>();
 
-   // public static Empresa pesquisar(String nome) {
-      //  return Empresa.get(nome);
-    //}
+   public static Empresa pesquisar(String nome) {
+        return Empresa.get(nome);
+    }
 
-    private static Funcionario get(String nome) {
+    private static Empresa get(String nome) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
+
+    //private static Funcionario get(String nome) {
+       // throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    //}
 
     private final String nome;
     private final String cnpj;    
