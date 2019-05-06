@@ -12,6 +12,7 @@ public class HorasTrabalhadas {
    private static void Saida() {
    saida = LocalTime.of(17,0,0);
    } 
+  
    private static void CalculoHoras() {
       horasTrabalhadas = saida.getHour() - entrada.getHour();
       int diferencaMinutos = saida.getMinute() - entrada.getMinute();

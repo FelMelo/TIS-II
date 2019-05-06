@@ -13,9 +13,7 @@ public class JavaApplication1 {
         return Funcionario.get(nome);
     }
 
-    private static Funcionario get(String nome) {
-        throw ne1w UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
     
    public static void main (String arg []){
 	//  menu principal
@@ -28,6 +26,8 @@ public class JavaApplication1 {
 			System.out.println("                  |     2 - Cadastro Empresa       |");
 			System.out.println("                  |     3 - Consulta Funcionário   |");
 			System.out.println("                  |     4 - Consulta Empresa       |");
+                        System.out.println("                  |     5 - Fazer Check In         |");
+                        System.out.println("                  |     6 - Fazer Check Out        |");
 			System.out.println("                  |     0 - Sair                   |");
 			System.out.println("                  =================================\n");
 			System.out.println                    ("Opção -> ");
@@ -40,12 +40,18 @@ public class JavaApplication1 {
 			case 2:
 				CadastroEmpresa ();
 				break;
-                       case 3:
+                        case 3:
 				ConsultaFuncionario ();
 				break;
-                       case 4:
+                        case 4:
 				ConsultaEmpresa ();
-				break;                              
+				break;    
+                        case 5:
+				Entrada ();
+				break; 
+                        case 6:
+				Saida ();
+				break; 
 			case 0:
 				break;
 			default:
@@ -86,7 +92,7 @@ public class JavaApplication1 {
                System.out.println(linha);
            }
            // Imprime confirmacao
-           System.out.println("Feito =D");
+           System.out.println("Salvo!");
        } catch (IOException e) {
        }       
    }
@@ -120,16 +126,40 @@ public class JavaApplication1 {
                System.out.println(linha);
            }
            // Imprime confirmacao
-           System.out.println("Feito =D");
+           System.out.println("Salvo!");
        } catch (IOException e) {
        }	   
    }
-   private static void ConsultaFuncionario() {
+     private static void ConsultaFuncionario() {
        
-   }
-   private static void ConsultaEmpresa() {
+    }
+     private static void ConsultaEmpresa() {
       
-   }
+     }
+     private static void Entrada() {
+         Scanner e = new Scanner(System.in);
+     
+	System.out.printf("Deseja bater o ponto de chegada?\n");
+        System.out.printf("Sim[s] ou Não[n]?\n");
+	String respE = e.nextLine();
+        if (respE == s) {
+               e.Entrada();
+           } else{
+            System.out.println("Programa encerrado.");
+        }
+    }
+    private static void Saida() {
+        Scanner o = new Scanner(System.in);
+     
+	System.out.printf("Deseja bater o ponto de saída?\n");
+	System.out.printf("Sim[s] ou Não[n]?\n");
+	String respS = o.nextLine();
+    }    if (respE == s) {
+               o.Saida();
+           } else{
+            System.out.println("Programa encerrado.");
+        }    }
 
-                   
-}
+        //CalculoHoras()
+    } 
+  
