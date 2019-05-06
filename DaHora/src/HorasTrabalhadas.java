@@ -1,23 +1,25 @@
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.Date;
+import java.time.LocalDate;
+import java.time.LocalTime;
 
 public class HorasTrabalhadas {
-       private static void CheckIn() {
-       	DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
-	Date date = new Date();
-	System.out.println(dateFormat.format(date));
+    private static LocalTime entrada, saida; 
+    private static int horasTrabalhadas;
+    
+    private static void Entrada() {
+   entrada = LocalTime.of(8,0,0);
+      
    }
-   private static void CheckOut() {
-        DateFormat dateFormat = new SimpleDateFormat("HH:mm:ss");
-	Date date = new Date();
-	System.out.println(dateFormat.format(date));
+   private static void Saida() {
+   saida = LocalTime.of(17,0,0);
    } 
    private static void CalculoHoras() {
-       
-      // horastrabalhadas = CheckOut() - CheckIn();
-     // return horastrabalhadas;
-        
-   } 
+      horasTrabalhadas = saida.getHour() - entrada.getHour();
+      int diferencaMinutos = saida.getMinute() - entrada.getMinute();
+      
+      if (diferencaMinutos >= 45) 
+          horasTrabalhadas++;
+      else if (diferencaMinutos <= 45)
+          horasTrabalhadas--;
+    } 
     
 }

@@ -4,19 +4,30 @@ import java.util.Map;
 
 public class Funcionario {
 
-    private static final Map<String, Funcionario> Cadastro = new HashMap<>();
-
-
-    public static Funcionario pesquisar(String nome) {
-        return Funcionario.get(nome);
-    }
-
-    private static Funcionario get(String nome) {
+    static Funcionario get(String nome) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    private final String nome;
-    private final String cpf;
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    private String nome;
+    private String cpf;
+    
     
 
     public Funcionario(String nome, String cpf) {

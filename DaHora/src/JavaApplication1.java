@@ -1,7 +1,22 @@
 import java.io.*;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
 public class JavaApplication1 {
+    
+    
+    private static final Map<String, Funcionario> Cadastro = new HashMap<>();
+
+
+    public static Funcionario pesquisar(String nome) {
+        return Funcionario.get(nome);
+    }
+
+    private static Funcionario get(String nome) {
+        throw ne1w UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+    
    public static void main (String arg []){
 	//  menu principal
 		int opcao = 0;
