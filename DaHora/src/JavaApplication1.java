@@ -1,5 +1,6 @@
 
 import java.io.*;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -8,13 +9,9 @@ public class JavaApplication1 {
 
     private static final Map<String, Funcionario> Cadastro = new HashMap<>();
 
-    public static Funcionario pesquisar(String nome) {
-        return Funcionario.get(nome);
-    }
-
     public static void main(String arg[]) {
         //  menu principal
-        int opcao = 0;
+        int opcao;
         Scanner lerOption = new Scanner(System.in);
         do {
             System.out.println("\n\n              ##### DaHora - Banco de Horas #####");
@@ -42,7 +39,7 @@ public class JavaApplication1 {
                     ConsultaFuncionario();
                     break;
                 case 4:
-                    ConsultaEmpresa();
+                    JavaApplication1.ConsultaEmpresa();
                     break;
                 case 5:
                     Entrada();
@@ -131,15 +128,12 @@ public class JavaApplication1 {
         }
     }
 
-    private static void ConsultaFuncionario() {
+    public static void ConsultaEmpresa(ArrayList<Funcionario> ListaFuncionario, String nome) throws FileNotFoundException {
+
         System.out.printf("Informe o nome do Funcionario que deseja pesquisar:\n");
         nome = ler.nextLine();
-        buscarFuncionario(ListaFuncionario, nome);
+        ConsultaEmpresa(ListaFuncionario, nome);
         break;
-        
-        
-
-    public static void buscarFuncionario(ArrayList<Funcionario> ListaFuncionario, String nome) throws FileNotFoundException {
 
         File dir = new File("C:\\TutorialArquivos");
         File arq = new File(dir, "User.txt");
@@ -164,13 +158,37 @@ public class JavaApplication1 {
         }
     }
 
-}
-
     private static void ConsultaEmpresa() {
+        System.out.printf("Informe o nome da Empresa que deseja pesquisar:\n");
+        nome = ler.nextLine();
+        ConsultaEmpresa(ListaEmpresa, nome);
+        
 
+        File dir = new File("C:\\TutorialArquivos");
+        File arq = new File(dir, "User.txt");
+
+        try {
+
+            FileReader fileReader = new FileReader(arq);
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+            String linha = bufferedReader.readLine();
+            while (linha != null) {
+                if (ListaEmpresa.equals(nome)) {
+                    System.out.println("Empresa cadastrada");
+                } else {
+                    System.out.println("Empresa não cadastrada");
+                }
+                linha = bufferedReader.readLine();
+            }
+            fileReader.close();
+            bufferedReader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
-    private static void Entrada() {
+
+private static void Entrada() {
         Scanner e = new Scanner(System.in);
 
         System.out.printf("Confirmar ponto de chegada?\n");
