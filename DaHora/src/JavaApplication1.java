@@ -166,14 +166,14 @@ public class JavaApplication1 {
 
 }
 
-private static void ConsultaEmpresa() {
+    private static void ConsultaEmpresa() {
 
     }
 
     private static void Entrada() {
         Scanner e = new Scanner(System.in);
 
-        System.out.printf("Deseja bater o ponto de chegada?\n");
+        System.out.printf("Confirmar ponto de chegada?\n");
         System.out.printf("Sim[s] ou Não[n]?\n");
         String respE = e.nextLine();
         if (respE == s) 
@@ -186,7 +186,7 @@ private static void ConsultaEmpresa() {
     private static void Saida() {
         Scanner o = new Scanner(System.in);
 
-        System.out.printf("Deseja bater o ponto de saída?\n");
+        System.out.printf("Confirmar ponto de saída?\n");
         System.out.printf("Sim[s] ou Não[n]?\n");
         String respS = o.nextLine();
 
