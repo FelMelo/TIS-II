@@ -24,7 +24,7 @@ public class JavaApplication1 {
             System.out.println("                  |     6 - Fazer Check Out        |");
             System.out.println("                  |     0 - Sair                   |");
             System.out.println("                  =================================\n");
-            System.out.println("Opção -> ");
+            System.out.print("O que você deseja fazer? ");
             opcao = lerOption.nextInt();
 
             System.out.print("\n");
@@ -140,21 +140,21 @@ public class JavaApplication1 {
 
         try {
 
-            FileReader fileReader = new FileReader(arq);
-            BufferedReader bufferedReader = new BufferedReader(fileReader);
-            String linha = bufferedReader.readLine();
-            while (linha != null) {
-                if (ListaFuncionario.equals(nome)) {
-                    System.out.println("Funcionário cadastrado");
-                } else {
-                    System.out.println("Nome não cadastrado");
+            BufferedReader bufferedReader;
+            try (FileReader fileReader = new FileReader(arq)) {
+                bufferedReader = new BufferedReader(fileReader);
+                String linha = bufferedReader.readLine();
+                while (linha != null) {
+                    if (ListaFuncionario.equals(nome)) {
+                        System.out.println("Funcionário cadastrado");
+                    } else {
+                        System.out.println("Nome não cadastrado");
+                    }
+                    linha = bufferedReader.readLine();
                 }
-                linha = bufferedReader.readLine();
             }
-            fileReader.close();
             bufferedReader.close();
         } catch (IOException e) {
-            e.printStackTrace();
         }
     }
 
@@ -197,7 +197,7 @@ public class JavaApplication1 {
         System.out.printf("Confirmar ponto de chegada?\n");
         System.out.printf("Sim[s] ou Não[n]?\n");
         String respE = e.nextLine();
-        if (respE == s) // e.Entrada();
+        if (respE.equals(s)) // e.Entrada();
         {
             System.out.printf("Hora de chegada:" + HorasTrabalhadas.CheckIn());
         } else {
@@ -220,6 +220,4 @@ public class JavaApplication1 {
             System.out.println("Programa encerrado.");
         }
     }
-
-    //CalculoHoras()
 }
