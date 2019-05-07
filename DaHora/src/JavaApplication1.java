@@ -198,7 +198,8 @@ private static void Entrada() {
         System.out.printf("Sim[s] ou Não[n]?\n");
         String respE = e.nextLine();
         if (respE == s) 
-            e.Entrada();
+           // e.Entrada();
+        System.out.printf("Hora de chegada:" + CheckIn());
         else 
             System.out.println("Programa encerrado.");
         
@@ -212,7 +213,8 @@ private static void Entrada() {
         String respS = o.nextLine();
 
         if (respE == s) 
-            o.Saida();
+           // o.Saida();
+        System.out.printf("Horas trabalhaddas:" + horasTrabalhadas());
          else 
             System.out.println("Programa encerrado.");
     }    

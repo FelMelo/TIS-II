@@ -5,11 +5,11 @@ public class HorasTrabalhadas {
     private static LocalTime entrada, saida; 
     private static int horasTrabalhadas;
     
-    private static void Entrada() {
+    private static void CheckIn() {
    entrada = LocalTime.of(8,0,0);
-      
+       
    }
-   private static void Saida() {
+   private static void CheckOut() {
    saida = LocalTime.of(17,0,0);
    } 
   
@@ -21,6 +21,7 @@ public class HorasTrabalhadas {
           horasTrabalhadas++;
       else if (diferencaMinutos <= 45)
           horasTrabalhadas--;
+      
     } 
     
 }
