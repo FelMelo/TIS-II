@@ -39,7 +39,7 @@ public class JavaApplication1 {
                     //ConsultaFuncionario();
                     break;
                 case 4:
-                    JavaApplication1.ConsultaEmpresa();
+//                    JavaApplication1.ConsultaEmpresa();
                     break;
                 case 5:
                     Entrada();
@@ -158,13 +158,12 @@ public class JavaApplication1 {
         }
     }
 
-    private static void ConsultaEmpresa() {
+    /*private static void ConsultaEmpresa() {
         String nome, ListaEmpresa;
         Scanner ler = new Scanner(System.in);
         System.out.printf("Informe o nome da Empresa que deseja pesquisar:\n");
         nome = ler.nextLine();
         ConsultaEmpresa(ListaEmpresa, nome);
-        
 
         File dir = new File("C:\\TutorialArquivos");
         File arq = new File(dir, "User.txt");
@@ -187,22 +186,24 @@ public class JavaApplication1 {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }
+    }*/
 
+    private static void Entrada() {
+        HorasTrabalhadas horas = new HorasTrabalhadas();
 
-private static void Entrada() {
         Scanner e = new Scanner(System.in);
         String s = null;
 
         System.out.printf("Confirmar ponto de chegada?\n");
         System.out.printf("Sim[s] ou Não[n]?\n");
         String respE = e.nextLine();
-        if (respE == s) 
-           // e.Entrada();
-        System.out.printf("Hora de chegada:" + CheckIn());
-        else 
+        if (respE == s) // e.Entrada();
+        {
+            System.out.printf("Hora de chegada:" + HorasTrabalhadas.CheckIn());
+        } else {
             System.out.println("Programa encerrado.");
-        
+        }
+
     }
 
     private static void Saida() {
@@ -212,12 +213,13 @@ private static void Entrada() {
         System.out.printf("Sim[s] ou Não[n]?\n");
         String respS = o.nextLine();
 
-        if (respE == s) 
-           // o.Saida();
-        System.out.printf("Horas trabalhaddas:" + horasTrabalhadas());
-         else 
+        if (respS.equals(s)) // o.Saida();
+        {
+            System.out.printf("Hora de saida:" + HorasTrabalhadas.CheckOut());
+        } else {
             System.out.println("Programa encerrado.");
-    }    
+        }
+    }
 
     //CalculoHoras()
 }
