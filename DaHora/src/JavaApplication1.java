@@ -36,7 +36,7 @@ public class JavaApplication1 {
                     CadastroEmpresa();
                     break;
                 case 3:
-                    ConsultaFuncionario();
+                    //ConsultaFuncionario();
                     break;
                 case 4:
                     JavaApplication1.ConsultaEmpresa();
@@ -129,11 +129,11 @@ public class JavaApplication1 {
     }
 
     public static void ConsultaEmpresa(ArrayList<Funcionario> ListaFuncionario, String nome) throws FileNotFoundException {
-
+        Scanner ler = new Scanner(System.in);
         System.out.printf("Informe o nome do Funcionario que deseja pesquisar:\n");
         nome = ler.nextLine();
         ConsultaEmpresa(ListaFuncionario, nome);
-        break;
+        //break;
 
         File dir = new File("C:\\TutorialArquivos");
         File arq = new File(dir, "User.txt");
@@ -159,6 +159,8 @@ public class JavaApplication1 {
     }
 
     private static void ConsultaEmpresa() {
+        String nome, ListaEmpresa;
+        Scanner ler = new Scanner(System.in);
         System.out.printf("Informe o nome da Empresa que deseja pesquisar:\n");
         nome = ler.nextLine();
         ConsultaEmpresa(ListaEmpresa, nome);
@@ -190,6 +192,7 @@ public class JavaApplication1 {
 
 private static void Entrada() {
         Scanner e = new Scanner(System.in);
+        String s = null;
 
         System.out.printf("Confirmar ponto de chegada?\n");
         System.out.printf("Sim[s] ou Não[n]?\n");
@@ -202,8 +205,8 @@ private static void Entrada() {
     }
 
     private static void Saida() {
+        String s = null;
         Scanner o = new Scanner(System.in);
-
         System.out.printf("Confirmar ponto de saída?\n");
         System.out.printf("Sim[s] ou Não[n]?\n");
         String respS = o.nextLine();
