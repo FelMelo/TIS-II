@@ -24,7 +24,7 @@ public class JavaApplication1 {
             System.out.println("                  |     6 - Fazer Check Out        |");
             System.out.println("                  |     0 - Sair                   |");
             System.out.println("                  =================================\n");
-            System.out.print("O que você deseja fazer? ");
+            System.out.println("Opção -> ");
             opcao = lerOption.nextInt();
 
             System.out.print("\n");
@@ -39,7 +39,7 @@ public class JavaApplication1 {
                     //ConsultaFuncionario();
                     break;
                 case 4:
-//                    JavaApplication1.ConsultaEmpresa();
+                    ConsultaEmpresa();
                     break;
                 case 5:
                     Entrada();
@@ -140,30 +140,30 @@ public class JavaApplication1 {
 
         try {
 
-            BufferedReader bufferedReader;
-            try (FileReader fileReader = new FileReader(arq)) {
-                bufferedReader = new BufferedReader(fileReader);
-                String linha = bufferedReader.readLine();
-                while (linha != null) {
-                    if (ListaFuncionario.equals(nome)) {
-                        System.out.println("Funcionário cadastrado");
-                    } else {
-                        System.out.println("Nome não cadastrado");
-                    }
-                    linha = bufferedReader.readLine();
+            FileReader fileReader = new FileReader(arq);
+            BufferedReader bufferedReader = new BufferedReader(fileReader);
+            String linha = bufferedReader.readLine();
+            while (linha != null) {
+                if (ListaFuncionario.equals(nome)) {
+                    System.out.println("Funcionário cadastrado");
+                } else {
+                    System.out.println("Nome não cadastrado");
                 }
+                linha = bufferedReader.readLine();
             }
+            fileReader.close();
             bufferedReader.close();
         } catch (IOException e) {
+            e.printStackTrace();
         }
     }
 
-    /*private static void ConsultaEmpresa() {
-        String nome, ListaEmpresa;
+    private static void ConsultaEmpresa() {
+        String nome, ListaEmpresa = null;
         Scanner ler = new Scanner(System.in);
         System.out.printf("Informe o nome da Empresa que deseja pesquisar:\n");
         nome = ler.nextLine();
-        ConsultaEmpresa(ListaEmpresa, nome);
+        //ConsultaEmpresa(funcionario, nome);
 
         File dir = new File("C:\\TutorialArquivos");
         File arq = new File(dir, "User.txt");
@@ -186,19 +186,15 @@ public class JavaApplication1 {
         } catch (IOException e) {
             e.printStackTrace();
         }
-    }*/
+    }
 
     private static void Entrada() {
         HorasTrabalhadas horas = new HorasTrabalhadas();
-
         Scanner e = new Scanner(System.in);
-        String s = null;
-
         System.out.printf("Confirmar ponto de chegada?\n");
         System.out.printf("Sim[s] ou Não[n]?\n");
         String respE = e.nextLine();
-        if (respE.equals(s)) // e.Entrada();
-        {
+        if (respE.equals("s")) {
             System.out.printf("Hora de chegada:" + HorasTrabalhadas.CheckIn());
         } else {
             System.out.println("Programa encerrado.");
@@ -206,18 +202,19 @@ public class JavaApplication1 {
 
     }
 
-    private static void Saida() {
-        String s = null;
+    private static void Saida(){
         Scanner o = new Scanner(System.in);
         System.out.printf("Confirmar ponto de saída?\n");
         System.out.printf("Sim[s] ou Não[n]?\n");
         String respS = o.nextLine();
 
-        if (respS.equals(s)) // o.Saida();
-        {
+        if (respS.equals("s")) {
             System.out.printf("Hora de saida:" + HorasTrabalhadas.CheckOut());
         } else {
             System.out.println("Programa encerrado.");
         }
+
     }
+
+    //CalculoHoras()
 }

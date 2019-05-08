@@ -1,26 +1,35 @@
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.temporal.ChronoUnit;
+import java.time.ZoneId;
+
 
 public class HorasTrabalhadas {
 
-    private static LocalTime entrada, saida;
+    private static LocalTime now2, saida;
     private static int horasTrabalhadas;
 
     static LocalTime CheckIn() {
-        entrada = LocalTime.of(8, 0, 0);
-        return entrada;
+        ZoneId hora = ZoneId.of("Brazil/East");
+        LocalTime now2 = LocalTime.now(hora);
+
+       // now2 = LocalTime.of(8, 0, 0);
+        return now2;
     }
 
     static LocalTime CheckOut() {
-        saida = LocalTime.of(17, 0, 0);
-        return saida;
+       ZoneId hora = ZoneId.of("Brazil/East");
+        LocalTime now2 = LocalTime.now(hora);
+
+       // now2 = LocalTime.of(8, 0, 0);
+        return now2;
 
     }
 
     static void CalculoHoras() {
-        horasTrabalhadas = saida.getHour() - entrada.getHour();
-        int diferencaMinutos = saida.getMinute() - entrada.getMinute();
+        horasTrabalhadas = saida.getHour() - now2.getHour();
+        int diferencaMinutos = saida.getMinute() - now2.getMinute();
 
         if (diferencaMinutos >= 45) {
             horasTrabalhadas++;
