@@ -75,14 +75,52 @@ public class Funcionario {
 			while ((linha = bufferedReader.readLine())!= null && vetorlido[0] != nomeFunc) {
 				
 				linha = bufferedReader.readLine();
-				
-				if (vetorlido[0] == nomeFunc) {
-					System.out.println(linha);
-				}
+	
+			}
+			if (vetorlido[0] == nomeFunc) {
+				System.out.println(linha);
+			}else {
+				System.out.println("Funcionario não encontrado");
 			}
 		}
 			catch (IOException e) {
 		}
 		return nomeFunc;
+	}
+	
+	public static String excluirFuncionario(File fileFunc, String nomeFunc) throws FileNotFoundException{
+		return nomeFunc;
+		
+		//exemplo de codigo para excluir
+		
+//			String contatoAExcluir = "ASDF";
+//        FileReader fileReader = null;  
+//        FileWriter fileWriter = null;   
+//        BufferedReader leitor = null;  
+//        String nomeDoArquivo = "F:\parte1.txt";
+//        String arquivoConferir = "F:\Conferir2.txt";  
+//        String line = "";  
+//        try {  
+//            fileReader = new FileReader(new File(nomeDoArquivo));  
+//            fileWriter = new FileWriter(new File(arquivoConferir)); 
+//            leitor = new BufferedReader(fileReader);
+//            line = "";  
+//            while ((line = leitor.readLine()) != null) {  
+//                if(!line.trim().equals(contatoAExcluir.trim())) { 
+//                        fileWriter.write(line + "\r\n"); 
+//                    }  
+//                }  
+//            }  
+//        } catch (IOException e) {  
+//            e.printStackTrace();  
+//        } finally   {  
+//            try {  
+//                fileWriter.close();
+//                fileReader.close();  
+//            } catch (IOException e) {  
+//                e.printStackTrace();  
+//            }  
+//        }  
+//    }  
 	}
 }		

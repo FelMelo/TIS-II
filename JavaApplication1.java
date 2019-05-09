@@ -1,3 +1,4 @@
+
 import java.io.*;
 import java.util.Scanner;
 
@@ -55,7 +56,18 @@ public class JavaApplication1 {
                     System.out.println(Empresa.ConsultaEmpresa(fileEmpre, razaosocial));
                     
                     break;
+                    
                 case 5:
+                	System.out.printf("Informe o nome do funcionario que deseja excluir:\n");
+                	nome = ler.nextLine();
+                	Funcionario.excluirFuncionario(fileFunc, nome);
+                	break;
+                case 6:
+                	System.out.printf("Informe a razão social da empresa que deseja excluir:\n");
+                	razaosocial = ler.nextLine();
+                	Empresa.excluirEmpresa(fileEmpre, razaosocial);
+                	break;
+                case 7:
                 	
                 	 HorasTrabalhadas horas = new HorasTrabalhadas();
                 	 System.out.printf("Confirmar ponto de chegada?\n");
@@ -68,7 +80,7 @@ public class JavaApplication1 {
                 	 }
                 	 
                 	 break;
-                case 6:
+                case 8:
                 	
                 	System.out.printf("Confirmar ponto de saída?\n");
                     System.out.printf("Sim[s] ou Não[n]?\n");
@@ -90,3 +102,32 @@ public class JavaApplication1 {
 
         System.out.println("Programa encerrado.");
     }
+
+    
+
+//    private static void ConsultaEmpresa() {
+        
+//
+//        File dir = new File("C:\\TutorialArquivos");
+//        File arq = new File(dir, "User.txt");
+//
+//        try {
+//
+//            FileReader fileReader = new FileReader(arq);
+//            BufferedReader bufferedReader = new BufferedReader(fileReader);
+//            String linha = bufferedReader.readLine();
+//            while (linha != null) {
+//                if (ListaEmpresa.equals(nome)) {
+//                    System.out.println("Empresa cadastrada");
+//                } else {
+//                    System.out.println("Empresa não cadastrada");
+//                }
+//                linha = bufferedReader.readLine();
+//            }
+//            fileReader.close();
+//            bufferedReader.close();
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//        }
+//    }
+}

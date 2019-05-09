@@ -74,11 +74,16 @@ public class Empresa {
 				
 				if (vetorlido[0] == razaoSocialEmpre) {
 					System.out.println(linha);
+				}else {
+					System.out.println("Empresa não encontrada");
 				}
 			}
 		}
 			catch (IOException e) {
 		}
+		return razaoSocialEmpre;
+	}
+	public static String excluirEmpresa(File fileFunc, String razaoSocialEmpre) throws FileNotFoundException{
 		return razaoSocialEmpre;
 	}
 }		
