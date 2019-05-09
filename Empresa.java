@@ -59,27 +59,26 @@ public class Empresa {
 		}
 	}
 
-	public static void ConsultaEmpresa(File fileEmpre, Empresa empresa) throws FileNotFoundException {
+	public static String ConsultaEmpresa(File fileEmpre, String razaoSocialEmpre) throws FileNotFoundException {
 
 		try {
-
-			FileReader fileReader = new FileReader(fileEmpre);
-			BufferedReader bufferedReader = new BufferedReader(fileReader);
-			String linha = bufferedReader.readLine();
-
-			while (linha != null) {
-				if (fileEmpre.equals(empresa)) {
-					System.out.println("Empresa cadastrado");
-				} else {
-					System.out.println("Nome não empresa");
-				}
+			
+			BufferedReader bufferedReader = new BufferedReader(new FileReader(fileEmpre));
+			String linha = "";
+			String vetorlido[];
+			vetorlido = linha.split(" - ");
+			
+			while ((linha = bufferedReader.readLine())!= null && vetorlido[0] != razaoSocialEmpre) {
+				
 				linha = bufferedReader.readLine();
+				
+				if (vetorlido[0] == razaoSocialEmpre) {
+					System.out.println(linha);
+				}
 			}
-
-			fileReader.close();
-			bufferedReader.close();
-
-		} catch (IOException e) {
 		}
+			catch (IOException e) {
+		}
+		return razaoSocialEmpre;
 	}
-}
+}		
