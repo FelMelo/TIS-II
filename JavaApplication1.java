@@ -1,4 +1,3 @@
-
 import java.io.*;
 import java.util.Scanner;
 
@@ -42,7 +41,7 @@ public class JavaApplication1 {
     				break;
                 case 3:
                 	
-                    System.out.printf("Informe o nome do Funcionario que deseja pesquisar:\n");
+                    System.out.printf("Informe o nome do funcionario que deseja pesquisar:\n");
                     nome = ler.nextLine();
                     Funcionario.ConsultaFuncionario(fileFunc, nome);
                     System.out.println(Funcionario.ConsultaFuncionario(fileFunc, nome));
@@ -50,9 +49,10 @@ public class JavaApplication1 {
                     break;
                 case 4:
                 	
-                	System.out.printf("Informe o nome da Empresa que deseja pesquisar:\n");
-                    nome = ler.nextLine();
-                    //Funcionario.ConsultaFuncionario(fileFunc, nome);
+                	System.out.printf("Informe a razão social da empresa que deseja pesquisar:\n");
+                	razaosocial = ler.nextLine();
+                    Empresa.ConsultaEmpresa(fileEmpre, razaosocial);
+                    System.out.println(Empresa.ConsultaEmpresa(fileEmpre, razaosocial));
                     
                     break;
                 case 5:
@@ -90,32 +90,3 @@ public class JavaApplication1 {
 
         System.out.println("Programa encerrado.");
     }
-
-    
-
-//    private static void ConsultaEmpresa() {
-        
-//
-//        File dir = new File("C:\\TutorialArquivos");
-//        File arq = new File(dir, "User.txt");
-//
-//        try {
-//
-//            FileReader fileReader = new FileReader(arq);
-//            BufferedReader bufferedReader = new BufferedReader(fileReader);
-//            String linha = bufferedReader.readLine();
-//            while (linha != null) {
-//                if (ListaEmpresa.equals(nome)) {
-//                    System.out.println("Empresa cadastrada");
-//                } else {
-//                    System.out.println("Empresa não cadastrada");
-//                }
-//                linha = bufferedReader.readLine();
-//            }
-//            fileReader.close();
-//            bufferedReader.close();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//    }
-}
