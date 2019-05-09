@@ -27,7 +27,7 @@ public class Funcionario {
 		return cpf;
 	}
 
-	private String nome;
+	private static String nome;
 	private String cpf;
 
 	public Funcionario(String nome, String cpf) {
@@ -52,7 +52,7 @@ public class Funcionario {
 			buffer_saida = new BufferedWriter(gravador);
 			buffRead.lines().count();
 
-			buffer_saida.write(funcionario.nome + "-");
+			buffer_saida.write(funcionario.nome + " - ");
 			buffer_saida.write(funcionario.cpf);
 
 			buffer_saida.newLine();
@@ -63,35 +63,26 @@ public class Funcionario {
 		}
 	}
 
-	public static boolean ConsultaFuncionario(File fileFunc, String nomeFunc) throws FileNotFoundException {
-
-		boolean achou = false;
+	public static String ConsultaFuncionario(File fileFunc, String nomeFunc) throws FileNotFoundException {
 
 		try {
-
-			FileReader fileReader = new FileReader(fileFunc);
-			BufferedReader bufferedReader = new BufferedReader(fileReader);
-			String linha = bufferedReader.readLine();
-
-			while (linha != null && achou == false) {
-
-				String vetorlido[];
-				vetorlido = linha.split("-");
-				System.out.println("Vetor " + vetorlido[0]);
-				System.out.println(nomeFunc);
+			
+			BufferedReader bufferedReader = new BufferedReader(new FileReader(fileFunc));
+			String linha = "";
+			String vetorlido[];
+			vetorlido = linha.split(" - ");
+			
+			while ((linha = bufferedReader.readLine())!= null && vetorlido[0] != nomeFunc) {
 				
-				if (nomeFunc == vetorlido[0]) {
-					achou = true;
-				}
 				linha = bufferedReader.readLine();
+				
+				if (vetorlido[0] == nomeFunc) {
+					System.out.println(linha);
+				}
 			}
-
-			fileReader.close();
-			bufferedReader.close();
-
-		} catch (IOException e) {
 		}
-		return achou;
+			catch (IOException e) {
+		}
+		return nomeFunc;
 	}
-
-}
+}		
